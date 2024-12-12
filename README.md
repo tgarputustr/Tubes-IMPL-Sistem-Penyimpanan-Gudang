@@ -31,5 +31,5 @@ Proyek ini merupakan proyek yang dikerjakan untuk memenuhi Tugas Besar Implement
 ## Kontak
 
 Jika anda memiliki pertanyaan, silahkan hubungi:
-- **Email**:
-- **GitHub**: tgarputustr, 
+- **Email**: tegarputus@gmail.com, pandupandusetiaanugrah0281@gmail.com, Rachasmuch@gmail.com
+- **GitHub**: tgarputustr, panduzetiaa, RachmawatiAde

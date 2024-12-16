@@ -24,7 +24,7 @@ Proyek ini merupakan proyek yang dikerjakan untuk memenuhi Tugas Besar Implement
 
 1. Tegar Putu Satria        2250081075
 2. Pandu Setia Anugrah      2250081076
-3. Rachmawati Ade Ningsih   2250081086
+3. Rachmawati Ade Ningsih   2250081086.
 ## Dokumentasi
 
 - [SRS (Software Requires Specification)](Docs/SRS_Sistem%20Penyimpanan%20Gudang.pdf)

@@ -64,6 +64,47 @@ CREATE TABLE `pembayaran` (
   `id_customer` int(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- ------------------------------------------------------
+-- Table structure for table `barang`
+--
+
+CREATE TABLE `barang` (
+  `id_barang` int(5) NOT NULL,
+  `nama_barang` varchar(30) NOT NULL,
+  `jenis_barang` varchar(30) NOT NULL,
+  `berat` int(10) NOT NULL,
+  `kapasitas` varchar(30) NOT NULL,
+  `status` varchar(30) NOT NULL,
+  `id_gudang` int(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `furniture`
+--
+
+CREATE TABLE `furniture` (
+  `id_barang` int(5) NOT NULL,
+  `bahan` varchar(30) NOT NULL,
+  `dimensi` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gudang`
+--
+
+CREATE TABLE `gudang` (
+  `id_gudang` int(5) NOT NULL,
+  `jenis_gudang` varchar(30) NOT NULL,
+  `kapasitas` varchar(30) NOT NULL,
+  `lokasi` varchar(30) NOT NULL,
+  `status` varchar(30) NOT NULL
+>>>>>>> modul/input_barang
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 --
 -- Indexes for dumped tables
 --
@@ -88,6 +129,31 @@ ALTER TABLE `customer`
 ALTER TABLE `pembayaran`
   ADD PRIMARY KEY (`id_pembayaran`),
   ADD KEY `id_customer` (`id_customer`);
+
+--
+-- Indexes for table `barang`
+--
+ALTER TABLE `barang`
+  ADD PRIMARY KEY (`id_barang`),
+  ADD KEY `id_gudang` (`id_gudang`);
+
+  --
+-- Indexes for table `food`
+--
+ALTER TABLE `food`
+  ADD KEY `id_barang` (`id_barang`);
+
+--
+-- Indexes for table `furniture`
+--
+ALTER TABLE `furniture`
+  ADD KEY `id_barang` (`id_barang`);
+
+--
+-- Indexes for table `gudang`
+--
+ALTER TABLE `gudang`
+  ADD PRIMARY KEY (`id_gudang`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -121,6 +187,23 @@ ALTER TABLE `pembayaran`
 ALTER TABLE `pembayaran`
   ADD CONSTRAINT `pembayaran_ibfk_1` FOREIGN KEY (`id_customer`) REFERENCES `customer` (`id_customer`);
 
+-- Constraints for table `barang`
+--
+ALTER TABLE `barang`
+  ADD CONSTRAINT `barang_ibfk_1` FOREIGN KEY (`id_gudang`) REFERENCES `gudang` (`id_gudang`);
+
+--
+-- Constraints for table `food`
+--
+ALTER TABLE `food`
+  ADD CONSTRAINT `food_ibfk_1` FOREIGN KEY (`id_barang`) REFERENCES `barang` (`id_barang`);
+
+--
+-- Constraints for table `furniture`
+--
+ALTER TABLE `furniture`
+  ADD CONSTRAINT `furniture_ibfk_1` FOREIGN KEY (`id_barang`) REFERENCES `barang` (`id_barang`);
+  
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

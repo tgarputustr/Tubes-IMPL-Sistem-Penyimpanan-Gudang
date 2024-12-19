@@ -3,15 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
-<<<<<<< HEAD
 -- Generation Time: Dec 18, 2024 at 04:48 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
-=======
--- Generation Time: Dec 19, 2024 at 12:40 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
->>>>>>> modul/input_barang
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,26 +36,9 @@ CREATE TABLE `admin` (
 
 -- --------------------------------------------------------
 
---
-<<<<<<< HEAD
-=======
--- Table structure for table `barang`
---
 
-CREATE TABLE `barang` (
-  `id_barang` int(5) NOT NULL,
-  `nama_barang` varchar(30) NOT NULL,
-  `jenis_barang` varchar(30) NOT NULL,
-  `berat` int(10) NOT NULL,
-  `kapasitas` varchar(30) NOT NULL,
-  `status` varchar(30) NOT NULL,
-  `id_gudang` int(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
 
 --
->>>>>>> modul/input_barang
 -- Table structure for table `customer`
 --
 
@@ -76,7 +53,6 @@ CREATE TABLE `customer` (
 -- --------------------------------------------------------
 
 --
-<<<<<<< HEAD
 -- Table structure for table `pembayaran`
 --
 
@@ -86,41 +62,6 @@ CREATE TABLE `pembayaran` (
   `jadwal_pembayaran` date NOT NULL,
   `jumlah` decimal(10,0) NOT NULL,
   `id_customer` int(6) NOT NULL
-=======
--- Table structure for table `food`
---
-
-CREATE TABLE `food` (
-  `id_barang` int(5) NOT NULL,
-  `jenis_makanan` varchar(30) NOT NULL,
-  `kadaluarsa` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `furniture`
---
-
-CREATE TABLE `furniture` (
-  `id_barang` int(5) NOT NULL,
-  `bahan` varchar(30) NOT NULL,
-  `dimensi` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `gudang`
---
-
-CREATE TABLE `gudang` (
-  `id_gudang` int(5) NOT NULL,
-  `jenis_gudang` varchar(30) NOT NULL,
-  `kapasitas` varchar(30) NOT NULL,
-  `lokasi` varchar(30) NOT NULL,
-  `status` varchar(30) NOT NULL
->>>>>>> modul/input_barang
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -128,25 +69,16 @@ CREATE TABLE `gudang` (
 --
 
 --
-<<<<<<< HEAD
 -- Indexes for table `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`),
   ADD UNIQUE KEY `email` (`email`);
-=======
--- Indexes for table `barang`
---
-ALTER TABLE `barang`
-  ADD PRIMARY KEY (`id_barang`),
-  ADD KEY `id_gudang` (`id_gudang`);
->>>>>>> modul/input_barang
 
 --
 -- Indexes for table `customer`
 --
 ALTER TABLE `customer`
-<<<<<<< HEAD
   ADD PRIMARY KEY (`id_customer`),
   ADD UNIQUE KEY `email` (`email`);
 
@@ -178,57 +110,17 @@ ALTER TABLE `customer`
 --
 ALTER TABLE `pembayaran`
   MODIFY `id_pembayaran` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25001;
-=======
-  ADD PRIMARY KEY (`id_customer`);
-
---
--- Indexes for table `food`
---
-ALTER TABLE `food`
-  ADD KEY `id_barang` (`id_barang`);
-
---
--- Indexes for table `furniture`
---
-ALTER TABLE `furniture`
-  ADD KEY `id_barang` (`id_barang`);
-
---
--- Indexes for table `gudang`
---
-ALTER TABLE `gudang`
-  ADD PRIMARY KEY (`id_gudang`);
->>>>>>> modul/input_barang
 
 --
 -- Constraints for dumped tables
 --
 
 --
-<<<<<<< HEAD
 -- Constraints for table `pembayaran`
 --
 ALTER TABLE `pembayaran`
   ADD CONSTRAINT `pembayaran_ibfk_1` FOREIGN KEY (`id_customer`) REFERENCES `customer` (`id_customer`);
 
-=======
--- Constraints for table `barang`
---
-ALTER TABLE `barang`
-  ADD CONSTRAINT `barang_ibfk_1` FOREIGN KEY (`id_gudang`) REFERENCES `gudang` (`id_gudang`);
-
---
--- Constraints for table `food`
---
-ALTER TABLE `food`
-  ADD CONSTRAINT `food_ibfk_1` FOREIGN KEY (`id_barang`) REFERENCES `barang` (`id_barang`);
-
---
--- Constraints for table `furniture`
---
-ALTER TABLE `furniture`
-  ADD CONSTRAINT `furniture_ibfk_1` FOREIGN KEY (`id_barang`) REFERENCES `barang` (`id_barang`);
->>>>>>> modul/input_barang
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

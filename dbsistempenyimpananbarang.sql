@@ -69,6 +69,21 @@ CREATE TABLE pembayaran (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
+
+--
+-- Table structure for table gudang
+--
+
+CREATE TABLE gudang (
+  id_gudang int(5) NOT NULL AUTO_INCREMENT,
+  jenis_gudang varchar(30) NOT NULL,
+  kapasitas varchar(30) NOT NULL,
+  lokasi varchar(30) NOT NULL,
+  status varchar(30) NOT NULL,
+  PRIMARY KEY (id_gudang)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
 -- Table structure for table barang
 --
 
@@ -99,20 +114,7 @@ CREATE TABLE furniture (
   FOREIGN KEY (id_barang) REFERENCES barang (id_barang)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
 
---
--- Table structure for table gudang
---
-
-CREATE TABLE gudang (
-  id_gudang int(5) NOT NULL AUTO_INCREMENT,
-  jenis_gudang varchar(30) NOT NULL,
-  kapasitas varchar(30) NOT NULL,
-  lokasi varchar(30) NOT NULL,
-  status varchar(30) NOT NULL,
-  PRIMARY KEY (id_gudang)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Indexes for dumped tables
 --

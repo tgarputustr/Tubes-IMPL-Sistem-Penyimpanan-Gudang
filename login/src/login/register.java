@@ -6,15 +6,7 @@ import java.sql.Statement;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author pandu
- */
 public class register extends javax.swing.JFrame {
-
-    /**
-     * Creates new form register
-     */
     public register() {
         initComponents();
     }
@@ -33,16 +25,16 @@ public class register extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         username = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        email = new javax.swing.JTextField();
+        emailaddress = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        password = new javax.swing.JPasswordField();
+        pass = new javax.swing.JPasswordField();
         jLabel7 = new javax.swing.JLabel();
         confirmpassword = new javax.swing.JTextField();
         resetbutton = new javax.swing.JToggleButton();
         haveaccount = new javax.swing.JButton();
         confirmbutton = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
-        id = new javax.swing.JTextField();
+        idinput = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -76,17 +68,17 @@ public class register extends javax.swing.JFrame {
 
         jLabel5.setText("Email");
 
-        email.addActionListener(new java.awt.event.ActionListener() {
+        emailaddress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emailActionPerformed(evt);
+                emailaddressActionPerformed(evt);
             }
         });
 
         jLabel6.setText("Password");
 
-        password.addActionListener(new java.awt.event.ActionListener() {
+        pass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordActionPerformed(evt);
+                passActionPerformed(evt);
             }
         });
 
@@ -124,9 +116,9 @@ public class register extends javax.swing.JFrame {
 
         jLabel8.setText("ID");
 
-        id.addActionListener(new java.awt.event.ActionListener() {
+        idinput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                idActionPerformed(evt);
+                idinputActionPerformed(evt);
             }
         });
 
@@ -139,14 +131,13 @@ public class register extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(id)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(resetbutton)
-                                .addGap(18, 18, 18)
-                                .addComponent(confirmbutton))
+                            .addComponent(idinput)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(resetbutton)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(confirmbutton))
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -158,7 +149,7 @@ public class register extends javax.swing.JFrame {
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(haveaccount)))
                                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(emailaddress, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(201, 201, 201)
                                         .addComponent(jLabel1)))
@@ -167,7 +158,7 @@ public class register extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7)
-                            .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(pass, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
@@ -187,15 +178,15 @@ public class register extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(id, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(idinput, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel5)
                 .addGap(18, 18, 18)
-                .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(emailaddress, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pass, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -248,13 +239,13 @@ public class register extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_usernameActionPerformed
 
-    private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
+    private void emailaddressActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailaddressActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_emailActionPerformed
+    }//GEN-LAST:event_emailaddressActionPerformed
 
-    private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
+    private void passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_passwordActionPerformed
+    }//GEN-LAST:event_passActionPerformed
 
     private void haveaccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_haveaccountActionPerformed
         homelogin homeloginFrame = new homelogin();
@@ -266,65 +257,67 @@ public class register extends javax.swing.JFrame {
     }//GEN-LAST:event_haveaccountActionPerformed
 
     private void confirmbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmbuttonActionPerformed
-        //System.out.println("register confirm");
-        String NAMA, USERNAME, ID, Email, Password;
-        String SUrl, SUser, SPass;
-        SUrl = "jdbc:mysql://localhost:3306/dbsistempenyimpananbarang";
-        SUser = "root";
-        SPass = "";
-        try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection(SUrl, SUser, SPass);
-            Statement st = con.createStatement();
-            if("".equals(nama.getText())){
-                JOptionPane.showMessageDialog(new JFrame(), "Full Name is require", 
-                        "Error", JOptionPane.ERROR_MESSAGE);
-            }
-        }catch(Exception e){
-            System.out.println("Gagal" + e.getMessage());
+    String NAMA = nama.getText();
+    String USERNAME = username.getText();
+    String ID = idinput.getText();
+    String EMAIL = emailaddress.getText();
+    String PASSWORD = String.valueOf(pass.getPassword());
+    String CONFIRM_PASSWORD = confirmpassword.getText();
+    
+    String SUrl = "jdbc:mysql://localhost:3306/dbsistempenyimpananbarang";
+    String SUser = "root";
+    String SPass = "";
+
+    if (NAMA.isEmpty() || USERNAME.isEmpty() || ID.isEmpty() || EMAIL.isEmpty() || PASSWORD.isEmpty()) {
+        JOptionPane.showMessageDialog(new JFrame(), "Please fill in all required fields", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    if (!PASSWORD.equals(CONFIRM_PASSWORD)) {
+        JOptionPane.showMessageDialog(new JFrame(), "Passwords do not match", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+
+    try {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        Connection con = DriverManager.getConnection(SUrl, SUser, SPass);
+        String query = "INSERT INTO users (id, name, username, email, password) VALUES (?, ?, ?, ?, ?)";
+        var pst = con.prepareStatement(query);
+        pst.setString(1, ID);
+        pst.setString(2, NAMA);
+        pst.setString(3, USERNAME);
+        pst.setString(4, EMAIL);
+        pst.setString(5, PASSWORD);
+
+        int rowsInserted = pst.executeUpdate();
+        if (rowsInserted > 0) {
+            JOptionPane.showMessageDialog(new JFrame(), "Account registered successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+            nama.setText("");
+            username.setText("");
+            idinput.setText("");
+            emailaddress.setText("");
+            pass.setText("");
+            confirmpassword.setText("");
         }
+        con.close();
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(new JFrame(), "Database connection error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    }
     }//GEN-LAST:event_confirmbuttonActionPerformed
 
     private void resetbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetbuttonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_resetbuttonActionPerformed
 
-    private void idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idActionPerformed
+    private void idinputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idinputActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_idActionPerformed
+    }//GEN-LAST:event_idinputActionPerformed
 
     private void confirmpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmpasswordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_confirmpasswordActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(register.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(register.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(register.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(register.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new register().setVisible(true);
@@ -335,9 +328,9 @@ public class register extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton confirmbutton;
     private javax.swing.JTextField confirmpassword;
-    private javax.swing.JTextField email;
+    private javax.swing.JTextField emailaddress;
     private javax.swing.JButton haveaccount;
-    private javax.swing.JTextField id;
+    private javax.swing.JTextField idinput;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -351,7 +344,7 @@ public class register extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JTextField nama;
-    private javax.swing.JPasswordField password;
+    private javax.swing.JPasswordField pass;
     private javax.swing.JToggleButton resetbutton;
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables

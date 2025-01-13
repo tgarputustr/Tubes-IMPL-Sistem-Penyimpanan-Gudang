@@ -263,6 +263,8 @@ public class register extends javax.swing.JFrame {
     String EMAIL = emailaddress.getText();
     String PASSWORD = String.valueOf(pass.getPassword());
     String CONFIRM_PASSWORD = confirmpassword.getText();
+    String sql = "INSERT INTO customer (id_customer, nama, email, perusahaan, no_telepon, username, password) VALUES (?, ?, ?, ?, ?, ?, ?)";
+
     
     String SUrl = "jdbc:mysql://localhost:3306/dbsistempenyimpananbarang";
     String SUser = "root";

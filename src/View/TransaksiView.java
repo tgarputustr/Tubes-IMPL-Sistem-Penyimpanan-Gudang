@@ -2,8 +2,6 @@ package View;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class TransaksiView extends JFrame {
     private JTextField fieldNoTransaksi, fieldNamaBarang, fieldKategori, fieldJumlah, fieldPemilik, fieldTanggal, fieldTotal;
@@ -95,14 +93,6 @@ public class TransaksiView extends JFrame {
         gbc.gridy = 8;
         gbc.gridwidth = 2;
         add(buttonBayar, gbc);
-
-        // Menambahkan ActionListener ke buttonBayar
-        buttonBayar.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                new BayarView(); // Pindah ke BayarView
-            }
-        });
 
         setLocationRelativeTo(null); // Tampilkan di tengah layar
         setVisible(true);
